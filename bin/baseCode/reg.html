@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Registration</title>
+</head>
+<body>
+  <h1>REGISTRATION</h1>
+  <form id="registration_form">
+    <lable>Full Name:</lable>
+    <br>
+    <input name="Name" class="name_input">
+    <br>
+    <label>Phone Number:</label>
+    <br/>
+    <input name="phone_number" id="phoneInput" class="phone_number_input">
+    <br/>
+    <br>
+    <div class="dropdown">
+      <button type="button" onclick="carrierSub()" class="dropbtn">SELECT CARRIER</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a onClick="grabCellProvider('attEnding')">AT&T</a>
+        <a onClick="grabCellProvider('verizonEnding')">Verizon</a>
+        <a onClick="grabCellProvider('tmobileEnding')">TMobile</a>
+        <a onClick="grabCellProvider('cricketEnding')">Cricket</a>
+      </div>
+      <br>
+  </form>
+  <br>
+  <button onclick="grabValue('submit')">Register</button>
+  <script src="./script.js"></script>
+
+  <script>
+    function carrierSub() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+  </script>
+</body>
+</html>
