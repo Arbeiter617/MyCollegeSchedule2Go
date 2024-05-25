@@ -10,10 +10,10 @@ var cricketEnding = ["@mms.cricketwireless.net"];
 //
 
 // value grabber
-function grabCellProvider(spec) {
-    for(var i = 0; i < window[spec].length; i++) {
-        tempEmail = document.querySelector(".phone_number_input").value.toString() + window[spec][i];
-        console.log("You are using " + spec);
+function grabCellProvider(provider) {
+    for(var i = 0; i < window[provider].length; i++) {
+        tempEmail = document.querySelector(".phone_number_input").value.toString() + window[provider][i];
+        console.log("You are using " + provider);
         console.log(tempEmail);
     }
 }
