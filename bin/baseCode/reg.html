@@ -16,7 +16,7 @@
     <label>Phone Number:</label>
     <br/>
     <input name="phone_number" id="phoneInput" class="phone_number_input">
-    <br/>
+    <br>
     <br>
     <div class="dropdown">
       <button type="button" onclick="carrierSub()" class="dropbtn">SELECT CARRIER</button>
@@ -27,9 +27,16 @@
         <a onClick="grabCellProvider('cricketEnding')">Cricket</a>
       </div>
       <br>
+      <br>
+      <div class="dropdown">
+        <button type="button" onclick="collegeSub()" class="dropbtn2">SELECT COLLEGE</button>
+        <div id="myDropdown2" class="dropdown-content2">
+          <a onClick="grabCollegeData('ULL')">ULL</a>
+        </div>
+        <br>
   </form>
   <br>
-  <button onclick="grabValue('submit')">Register</button>
+  <button type='button' onclick="grabValue('submit')">Register</button>
   <script src="./script.js"></script>
 
   <script>
@@ -37,9 +44,24 @@
       document.getElementById("myDropdown").classList.toggle("show");
     }
 
+    function collegeSub() {
+      document.getElementById("myDropdown2").classList.toggle("show");
+    }
+
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+  
+  if(!event.target.matches('.dropbtn2')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content2");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
